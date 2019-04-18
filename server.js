@@ -32,6 +32,9 @@ wss.on('connection', function connection(ws) {
   	}
   
   });
+  ws.on('upgrade', function (req, socket, head) {
+  	ws.handleUpgrade(req, socket, head);
+  });	
 
 });
 
