@@ -83,7 +83,11 @@ var server= http.createServer(function(request, response) {
         }
 
 
-}).listen(port,ipaddress);
+}).listen(port,ipaddress, function () {
+
+    console.log( "Listening on " + ipaddress + ", server_port " + port  );
+
+});
 
 var WebSocketServer = require('ws').Server
 var uuid = require('node-uuid');
