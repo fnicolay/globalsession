@@ -94,6 +94,6 @@ http.createServer(function(request, response) {
 
 }).listen(port2,ip, function () {
 
-    console.log( "Listening on " + ipaddress + ", server_port " + port  );
+    console.log( "Listening on " + ip + ", server_port " + port2  );
 
 });
