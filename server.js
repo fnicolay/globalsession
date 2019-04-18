@@ -5,7 +5,7 @@ Object.size = function(obj) {
     }
     return size;
 };
-var ip = process.env.OPENSHIFT_NODEJS_IP;
+var ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 var port1      = 8080;
 var port2      = 8081;
 
