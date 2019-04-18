@@ -1,13 +1,3 @@
-var express = require('express'),
-    app     = express(),
-    morgan  = require('morgan');
-    
-Object.assign=require('object-assign')
-
-app.engine('html', require('ejs').renderFile);
-app.use(morgan('combined'))
-
-
 Object.size = function(obj) {
     var size = 0, key;
     for (key in obj) {
@@ -17,7 +7,7 @@ Object.size = function(obj) {
 };
 		
 
-var ipaddress = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+var ipaddress = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 var port      = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
 var http = require("http");
@@ -25,13 +15,13 @@ var http = require("http");
 var server= http.createServer(function(request, response) {
 
         response.writeHead(200, {"Content-Type": "text/plain","Access-Control-Allow-Origin":"*"});
-
+	console.log("ENTROU");
 
         process.on('uncaughtException', function(err) 
         {
 	        response.end("Exception");
 		});
-
+		console.log(request.method);
         try
         {
         if(request.method == "POST")
