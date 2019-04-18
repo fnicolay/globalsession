@@ -92,8 +92,8 @@ http.createServer(function(request, response) {
 		 response.end("NOT Supported");
 	}
 
-}).listen(port2,ip, function () {
+}).listen(port1,ip, function () {
 
-    console.log( "Listening on " + ip + ", server_port " + port2  );
+    console.log( "Listening on " + ip + ", server_port " + port1  );
 
 });
