@@ -6,8 +6,8 @@ Object.size = function(obj) {
     return size;
 };
 var ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
-var port1      = 8080;
-var port2      = 8081;
+var port1      = 8000;
+var port2      = 8080;
 
 
 
@@ -92,8 +92,8 @@ http.createServer(function(request, response) {
 		 response.end("NOT Supported");
 	}
 
-}).listen(port1,ip, function () {
+}).listen(port2,ip, function () {
 
-    console.log( "Listening on " + ip + ", server_port " + port1  );
+    console.log( "Listening on " + ip + ", server_port " + port2  );
 
 });
